@@ -16,9 +16,6 @@ public class GoogleTest {
 
     @BeforeTest
     public void setUp() {
-        if (driver == null) {
-            driver = new ChromeDriver();
-        }
         driver.get("http://www.google.com");
     }
 
@@ -63,7 +60,7 @@ public class GoogleTest {
     }
 
     @AfterTest
-    public void close_driver() {
+    public void closeDriver() {
         driver.quit();
     }
 }
