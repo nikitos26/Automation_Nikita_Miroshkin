@@ -45,15 +45,15 @@ public class LayingLaminateWithDiagram {
 
         setValue(getDriver().findElement(By.name("calc_bias")), bias);
         setValue(getDriver().findElement(By.name("calc_walldist")), wallDist);
-        getDriver().findElement(By.xpath("//*[@id=\"inputcalc\"]/div/div[3]/div[7]/div/input")).click();
+        getDriver().findElement(By.xpath("//*[@id='inputcalc']/div/div[3]/div[7]/div/input")).click();
 
-        Assert.assertEquals(layingArea, getDriver().findElement(By.xpath("//*[@id=\"s_lam\"]/b")).getText());
-        Assert.assertEquals(amountPanels, getDriver().findElement(By.xpath("//*[@id=\"l_count\"]/b")).getText());
-        Assert.assertEquals(amountPackages, getDriver().findElement(By.xpath("//*[@id=\"l_packs\"]/b")).getText());
-        Assert.assertEquals(priceLaminate, getDriver().findElement(By.xpath("//*[@id=\"l_price\"]/b")).getText());
-        Assert.assertEquals(leftovers, getDriver().findElement(By.xpath("//*[@id=\"l_over\"]/b")).getText());
-        Assert.assertEquals(leftovers, getDriver().findElement(By.xpath("//*[@id=\"l_over\"]/b")).getText());
-        Assert.assertEquals(segments, getDriver().findElement(By.xpath("//*[@id=\"l_trash\"]/b")).getText());
+        Assert.assertEquals(layingArea, getDriver().findElement(By.xpath("//*[@id='s_lam']/b")).getText());
+        Assert.assertEquals(amountPanels, getDriver().findElement(By.xpath("//*[@id='l_count']/b")).getText());
+        Assert.assertEquals(amountPackages, getDriver().findElement(By.xpath("//*[@id='l_packs']/b")).getText());
+        Assert.assertEquals(priceLaminate, getDriver().findElement(By.xpath("//*[@id='l_price']/b")).getText());
+        Assert.assertEquals(leftovers, getDriver().findElement(By.xpath("//*[@id='l_over']/b")).getText());
+        Assert.assertEquals(leftovers, getDriver().findElement(By.xpath("//*[@id='l_over']/b")).getText());
+        Assert.assertEquals(segments, getDriver().findElement(By.xpath("//*[@id='l_trash']/b")).getText());
 
     }
 

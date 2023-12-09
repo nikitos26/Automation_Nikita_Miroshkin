@@ -30,7 +30,7 @@ public class CalculatingLaminateFlooring {
 
     @Test
     public void calculatingLaminate() {
-        getDriver().findElement(By.xpath("//*[@id=\"qc-cmp2-ui\"]/div[2]/div/button[3]/span")).click();
+        getDriver().findElement(By.xpath("//*[@id='qc-cmp2-ui']/div[2]/div/button[3]/span")).click();
         setValue(getDriver().findElement(By.id("ln_room_id")), "500");
 
         setValue(getDriver().findElement(By.id("wd_room_id")), "400");
@@ -47,7 +47,7 @@ public class CalculatingLaminateFlooring {
         setValue(getDriver().findElement(By.id("indent_walls_id")), "10");
 
         getDriver().findElement(By.id("direction-laminate-id1")).click();
-        getDriver().findElement(By.xpath("//*[@id=\"t3-content\"]/div[3]/article/section/div[2]/div[2]/div[2]/a")).click();
+        getDriver().findElement(By.xpath("//*[@id='t3-content']/div[3]/article/section/div[2]/div[2]/div[2]/a")).click();
 
         Assert.assertEquals("84", getDriver().findElement(By.cssSelector("span[style*='color:#C80303; font-weight:bold;']")).getText());
         Assert.assertEquals("9", getDriver().findElement(By.cssSelector("span[style*='color:#0E8C19; font-weight:bold;']")).getText());
