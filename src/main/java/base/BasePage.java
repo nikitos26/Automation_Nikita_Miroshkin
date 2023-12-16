@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -48,5 +49,22 @@ public abstract class BasePage {
 
     protected Integer getElementsCount(By by) {
         return driver.findElements(by).size();
+    }
+
+    protected void waitUntil(Integer seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    protected void waitLocatorDisappear(WebElement element) {
+        wait.until(ExpectedConditions.invisibilityOf(element));
+
+    }
+
+    protected void waitLocatorAppear(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 }
