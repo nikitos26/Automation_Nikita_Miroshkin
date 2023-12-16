@@ -9,7 +9,7 @@ import projects.saucedemo.pages.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LoginTest extends BaseTest {
+public class SauceDemoTests extends BaseTest {
     private LoginPage loginPage;
     private ProductPage productPage;
     private CartPage cartPage;
