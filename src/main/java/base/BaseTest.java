@@ -15,12 +15,12 @@ public abstract class BaseTest {
         DriverCreation.createDriver(DriverTypes.CHROME);
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     protected void tearDown() {
         DriverCreation.quitDriver();
     }
 
-    protected void refreshPageAndClearCookies(String url){
+    protected void removeCookiesAndSetUrl(String url){
         getDriver().navigate().refresh();
         getDriver().manage().deleteAllCookies();
         getDriver().navigate().to(url);

@@ -37,4 +37,13 @@ public class ProductPage extends BasePage {
     public Integer getProductSize() {
         return getElementsCount(itemName);
     }
+
+    public void clickOnItemByName(String itemName) {
+        By itemBtnByName = By.xpath("//div[contains(text(),'" + itemName + "')]//ancestor::div[@class='inventory_item_description']/descendant::button");
+        driver.findElement(itemBtnByName).click();
+    }
+
+    public void setPage() {
+        driver.get(pageUrl);
+    }
 }
