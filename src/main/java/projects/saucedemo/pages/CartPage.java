@@ -32,4 +32,9 @@ public class CartPage extends BasePage {
         click(this.checkoutBtn);
     }
 
+    public void clickRemoveBntByNameProduct(String productName) {
+        By removeBtn = By.xpath("//div[contains(text(),'" + productName + "')]//ancestor::div[@class='cart_item_label']/descendant::button");
+        click(driver.findElement(removeBtn));
+    }
+
 }
