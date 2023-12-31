@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import projects.saucedemo.pages.CartPage;
 import projects.saucedemo.pages.ProductPage;
-import utils.DataProviderClass;
+import utils.provider.DataProviderClass;
 
 public class CatalogTest extends BaseTest {
     private ProductPage productPage;

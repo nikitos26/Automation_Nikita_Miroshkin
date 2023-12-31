@@ -7,7 +7,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import projects.saucedemo.pages.LoginPage;
 import projects.saucedemo.pages.ProductPage;
-import utils.DataProviderClass;
+import utils.provider.DataProviderClass;
 
 public class LoginTest extends BaseTest {
     private LoginPage loginPage;
@@ -49,7 +49,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(priority = 4, description = "Successful user login")
-    @Parameters({"userName", "password"})
+    @Parameters({"username", "password"})
     public void successfulLogin(String userName, String password) {
         loginPage.verifyPage();
         loginPage.enterUsername(userName);
