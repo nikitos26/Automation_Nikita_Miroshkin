@@ -16,7 +16,10 @@ public class DriverCreation {
     }
 
     public static void quitDriver() {
-        webDriver.quit();
+        if (webDriver != null) {
+            webDriver.quit();
+            webDriver = null;
+        }
     }
 
     public static void createDriver(DriverTypes type) {
@@ -36,6 +39,10 @@ public class DriverCreation {
             }
             webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         }
+    }
+
+    public static WebDriver getDriver() {
+        return webDriver;
     }
 
 }
