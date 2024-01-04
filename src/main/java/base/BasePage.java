@@ -59,12 +59,32 @@ public abstract class BasePage {
         }
     }
 
-    protected void waitLocatorDisappear(WebElement element) {
-        wait.until(ExpectedConditions.invisibilityOf(element));
+    protected void waitLocatorDisappear(By by) {
+        System.out.println("Wait disappear :: " + by);
+        click(driver.findElement(by));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
+    }
 
+    protected void waitLocatorDisappear(WebElement element) {
+        System.out.println("Wait disappear :: " + element);
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     protected void waitLocatorAppear(WebElement element) {
+        System.out.println("Wait appear :: " + element);
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    protected void waitLocatorAppear(By by) {
+        System.out.println("Wait appear :: " + by);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
+    protected String get_text(WebElement element) {
+        return element.getText();
+    }
+
+    protected String get_text(By by) {
+        return driver.findElement(by).getText();
     }
 }
