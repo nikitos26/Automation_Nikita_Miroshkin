@@ -4,7 +4,8 @@ public enum HomePageItems {
     CONTEXT_MENU("Context Menu"),
     FRAMES("Frames"),
     DYNAMIC_CONTROLS("Dynamic Controls"),
-    FILE_UPLOAD("File Upload");
+    FILE_UPLOAD("File Upload"),
+    SORTABLE_DATA_TABLES("Sortable Data Tables");
 
     private final String item;
 
