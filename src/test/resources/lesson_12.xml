@@ -3,7 +3,7 @@
 <suite name="Lesson_12">
     <test name="WorkWithTables">
         <classes>
-            <class name="lesson_12.WorkWithTables"/>
+            <class name="lesson_12.LoginPage"/>
         </classes>
     </test>
 </suite>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lesson_13">
+    <test name="Factory Pattern">
+        <classes>
+            <class name="lesson_13.LoginFactoryTest"/>
+            <class name="lesson_13.CatalogFactoryTest"/>
+        </classes>
+    </test>
+
+    <test name="Chain of invocations">
+        <classes>
+            <class name="lesson_13.LoginChainOfInvocationsTest"/>
+            <class name="lesson_13.CatalogChainOfInvocationsTest"/>
+        </classes>
+    </test>
+
+    <test name="Value Object Test">
+        <classes>
+            <class name="lesson_13.ValueObjectTest"/>
+        </classes>
+    </test>
+
+    <test name="Builder Test">
+        <classes>
+            <class name="lesson_13.BuilderTest"/>
+        </classes>
+    </test>
+
+
+</suite>
