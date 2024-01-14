@@ -18,7 +18,7 @@ public abstract class BasePage {
     protected Actions actions;
 
     {
-        driver = DriverCreation.getWebDriver();
+        driver = DriverCreation.getDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(1));
         actions = new Actions(driver);
     }

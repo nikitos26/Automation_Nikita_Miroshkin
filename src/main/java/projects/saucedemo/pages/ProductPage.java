@@ -15,15 +15,15 @@ public class ProductPage extends BasePage {
     private final By itemName = By.cssSelector(".inventory_item_name");
 
     public void verifyPage() {
-        Assert.assertEquals(DriverCreation.getWebDriver().findElement(header).getText(), "Swag Labs",
+        Assert.assertEquals(DriverCreation.getDriver().findElement(header).getText(), "Swag Labs",
                 "Wrong header name.");
-        Assert.assertFalse(DriverCreation.getWebDriver().findElements(productList).isEmpty(), "Product list is empty.");
-        Assert.assertEquals(DriverCreation.getWebDriver().getCurrentUrl(), "https://www.saucedemo.com/inventory.html",
+        Assert.assertFalse(DriverCreation.getDriver().findElements(productList).isEmpty(), "Product list is empty.");
+        Assert.assertEquals(DriverCreation.getDriver().getCurrentUrl(), "https://www.saucedemo.com/inventory.html",
                 "Wrong catalog url.");
     }
 
     public void clickAddToCard(Integer index) {
-        click(DriverCreation.getWebDriver().findElements(productList).get(index).findElement(addToCard));
+        click(DriverCreation.getDriver().findElements(productList).get(index).findElement(addToCard));
     }
 
     public void clickOnCartIcon() {

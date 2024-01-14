@@ -11,7 +11,7 @@ import java.time.Duration;
 public class DriverCreation {
     private static WebDriver webDriver;
 
-    public static WebDriver getWebDriver() {
+    public static WebDriver getDriver() {
         return webDriver;
     }
 
@@ -40,9 +40,4 @@ public class DriverCreation {
             webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         }
     }
-
-    public static WebDriver getDriver() {
-        return webDriver;
-    }
-
 }

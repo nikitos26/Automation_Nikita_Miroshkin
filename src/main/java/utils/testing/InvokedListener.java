@@ -8,7 +8,6 @@ import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 
 import java.io.ByteArrayInputStream;
-
 import static driver.DriverCreation.getDriver;
 
 public class InvokedListener implements IInvokedMethodListener {
