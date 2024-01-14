@@ -20,8 +20,6 @@ public class SortableDataTables extends BasePage {
     private final By tableHeader = By.tagName("thead");
     private final By tableBody = By.tagName("tbody");
 
-    private List<Integer> numbers = Arrays.asList(-79, 99, -83, -75, -78, -22, -57, 84, 11, 15);
-
     public void verifyPage() {
         wait.until(textToBe(header, "Data Tables"));
         Assert.assertEquals(driver.getCurrentUrl(), pageUrl, "Page has wrong link.");
@@ -64,12 +62,5 @@ public class SortableDataTables extends BasePage {
                 .map(formattedEmail -> formattedEmail.replaceAll("@[a-zA-Z.]+", "@gmail.com"))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
-    }
-
-    public void formattedNumbers() {
-        System.out.println(numbers.stream()
-                .map(number -> Math.abs(number))
-                .sorted()
-                .collect(Collectors.toList()));
     }
 }

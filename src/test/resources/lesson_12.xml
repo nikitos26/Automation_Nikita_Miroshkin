@@ -6,4 +6,10 @@
             <class name="lesson_12.LoginPage"/>
         </classes>
     </test>
+
+    <test name="Format numbers">
+        <classes>
+            <class name="lesson_12.SortedNumbers"/>
+        </classes>
+    </test>
 </suite>
