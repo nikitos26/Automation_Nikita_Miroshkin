@@ -25,11 +25,11 @@ public class LoginPage extends BasePage {
     }
 
     public void open(String url) {
-        DriverCreation.getWebDriver().get(url);
+        DriverCreation.getDriver().get(url);
     }
 
     public void open() {
-        DriverCreation.getWebDriver().get(getProperties().getProperty("url"));
+        DriverCreation.getDriver().get(getProperties().getProperty("url"));
     }
 
     public void verifyPage() {
