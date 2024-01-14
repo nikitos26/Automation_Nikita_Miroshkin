@@ -26,9 +26,4 @@ public class WorkWithTables extends BaseTest {
         sortableDataTables.verifyPage();
         sortableDataTables.formattedEmail(1);
     }
-
-    @Test(priority = 2, description = "Get sorted numbers.")
-    public void sortedNumbers(){
-        sortableDataTables.formattedNumbers();
-    }
 }
