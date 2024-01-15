@@ -11,12 +11,15 @@ import java.time.Duration;
 public class DriverCreation {
     private static WebDriver webDriver;
 
-    public static WebDriver getWebDriver() {
+    public static WebDriver getDriver() {
         return webDriver;
     }
 
     public static void quitDriver() {
-        webDriver.quit();
+        if (webDriver != null) {
+            webDriver.quit();
+            webDriver = null;
+        }
     }
 
     public static void createDriver(DriverTypes type) {
