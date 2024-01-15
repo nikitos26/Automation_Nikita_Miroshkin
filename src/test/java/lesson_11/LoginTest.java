@@ -57,7 +57,7 @@ public class LoginTest extends BaseTest {
 
     @Test(priority = 4, description = "Successful user login")
     @Parameters({"username", "password"})
-    public void successfulLogin(String userName, String password) {
+    public void successfulLogin(@Optional("Test") String userName, @Optional("123qa") String password) {
         loginPage.verifyPage();
         loginPage.enterUsername(userName);
         loginPage.enterPassword(password);

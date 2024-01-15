@@ -40,5 +40,4 @@ public class DriverCreation {
             webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         }
     }
-
 }

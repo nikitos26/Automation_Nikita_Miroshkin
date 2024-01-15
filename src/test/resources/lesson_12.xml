@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lesson_12">
+    <test name="WorkWithTables">
+        <classes>
+            <class name="lesson_12.WorkWithTables"/>
+        </classes>
+    </test>
+
+    <test name="Format numbers">
+        <classes>
+            <class name="lesson_12.SortedNumbers"/>
+        </classes>
+    </test>
+</suite>
