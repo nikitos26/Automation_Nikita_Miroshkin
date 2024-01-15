@@ -6,10 +6,9 @@ import org.testng.annotations.Test;
 import projects.herokuapp.pages.HomePage;
 import projects.herokuapp.pages.SortableDataTables;
 
-import static projects.herokuapp.pages.HomePageItems.FRAMES;
 import static projects.herokuapp.pages.HomePageItems.SORTABLE_DATA_TABLES;
 
-public class WorkWithTables extends BaseTest {
+public class LoginPage extends BaseTest {
     HomePage homePage;
     SortableDataTables sortableDataTables;
 
