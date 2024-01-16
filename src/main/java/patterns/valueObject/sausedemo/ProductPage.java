@@ -1,9 +1,7 @@
-package projects.saucedemo.pages;
-
+package patterns.valueObject.sausedemo;
 
 import base.BasePage;
 import driver.DriverCreation;
-import entities.sausedemo.Product;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -15,20 +13,23 @@ public class ProductPage extends BasePage {
     private final By cardIcon = By.className("shopping_cart_link");
     private final By itemName = By.cssSelector(".inventory_item_name");
 
-    public void verifyPage() {
+    public ProductPage verifyPage() {
         Assert.assertEquals(DriverCreation.getDriver().findElement(header).getText(), "Swag Labs",
                 "Wrong header name.");
         Assert.assertFalse(DriverCreation.getDriver().findElements(productList).isEmpty(), "Product list is empty.");
         Assert.assertEquals(DriverCreation.getDriver().getCurrentUrl(), "https://www.saucedemo.com/inventory.html",
                 "Wrong catalog url.");
+        return this;
     }
 
-    public void clickAddToCard(Integer index) {
+    public ProductPage clickAddToCard(Integer index) {
         click(DriverCreation.getDriver().findElements(productList).get(index).findElement(addToCard));
+        return this;
     }
 
-    public void clickOnCartIcon() {
+    public ProductPage clickOnCartIcon() {
         click(cardIcon);
+        return this;
     }
 
     public String getItemNameByIndex(Integer index) {
@@ -39,17 +40,14 @@ public class ProductPage extends BasePage {
         return getElementsCount(itemName);
     }
 
-    public void clickOnItemByName(String itemName) {
+    public ProductPage clickOnItemByName(String itemName) {
         By itemBtnByName = By.xpath("//div[contains(text(),'" + itemName + "')]//ancestor::div[@class='inventory_item_description']/descendant::button");
         driver.findElement(itemBtnByName).click();
+        return this;
     }
 
-    public void clickOnItemByName(Product product) {
-        By itemBtnByName = By.xpath("//div[contains(text(),'" + product.getProductName() + "')]//ancestor::div[@class='inventory_item_description']/descendant::button");
-        driver.findElement(itemBtnByName).click();
-    }
-
-    public void setPage() {
+    public ProductPage setPage() {
         driver.get(pageUrl);
+        return this;
     }
 }

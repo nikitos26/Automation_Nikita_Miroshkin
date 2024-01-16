@@ -1,5 +1,6 @@
 package lesson_4;
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
+@Log4j
 public class GoogleTest {
     WebDriver driver = new ChromeDriver();
 
@@ -24,12 +26,12 @@ public class GoogleTest {
             WebElement closeCookiePopup = driver.findElement(By.cssSelector("[id=\"W0wltc\"]"));
             closeCookiePopup.click();
         } catch (NoSuchElementException e) {
-            System.out.println("Element closeCookiePopup not found.");
+            log.info("Element closeCookiePopup not found.");
         }
     }
 
     public void resetUrl() {
-        System.out.println(driver.getCurrentUrl());
+        log.info(driver.getCurrentUrl());
         if (!driver.getCurrentUrl().contains("http://www.google.com")) {
             driver.get("http://www.google.com");
         }

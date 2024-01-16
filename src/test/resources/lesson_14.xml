@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lesson_14">
+    <test name="Value Object. SauceDemo">
+        <classes>
+            <class name="lesson_14.LoginTest"/>
+            <class name="lesson_14.CatalogTest"/>
+        </classes>
+    </test>
+    
+</suite>

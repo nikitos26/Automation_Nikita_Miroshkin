@@ -1,5 +1,6 @@
 package utils.provider;
 
+import entities.sausedemo.Product;
 import entities.sausedemo.UserBuilder;
 import org.testng.annotations.DataProvider;
 
@@ -13,9 +14,46 @@ public class DataProviderClass {
                 {"John", "secret_sauce"}};
     }
 
+    @DataProvider(name = "wrong user data from builder")
+    public Object[][] getUserNamesFromBuilder() {
+        return new Object[][]{
+                {new UserBuilder.Builder()
+                        .withUserName("Alex")
+                        .withPassword("secret_sauce")
+                        .build()},
+                {new UserBuilder.Builder()
+                        .withUserName("Bob")
+                        .withPassword("secret_sauce")
+                        .build()},
+                {new UserBuilder.Builder()
+                        .withUserName("John")
+                        .withPassword("secret_sauce")
+                        .build()}
+        };
+    };
+
+    @DataProvider(name = "Successful user login from builder")
+    public Object[][] passedData() {
+        return new Object[][]{
+                {new UserBuilder.Builder()
+                        .withUserName("standard_user")
+                        .withPassword("secret_sauce")
+                        .build()}
+        };
+    }
+
     @DataProvider(name = "product names")
     public Object[][] productNames() {
         return new Object[][]{{"Backpack"}, {"Bike Light"}, {"Bolt T-Shirt"}};
+    }
+
+    @DataProvider(name = "product names from builder")
+    public Object[][] productNamesFromBuilder() {
+        return new Object[][]{
+                {new Product.ProductBuilder().productName("Backpack").build()},
+                {new Product.ProductBuilder().productName("Bike Light").build()},
+                {new Product.ProductBuilder().productName("Bolt T-Shirt").build()}
+        };
     }
 
     @DataProvider(name = "get wrong user data from builder")
@@ -36,4 +74,3 @@ public class DataProviderClass {
         };
     }
 }
-

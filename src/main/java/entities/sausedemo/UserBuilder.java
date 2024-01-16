@@ -1,15 +1,15 @@
 package entities.sausedemo;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class UserBuilder {
     private String userName;
     private String password;
-
-    public String getUserName() {
-        return userName;
-    }
-    public String getPassword() {
-        return password;
-    }
 
     public static class Builder {
         private UserBuilder userBuilder;
@@ -33,11 +33,4 @@ public class UserBuilder {
         }
     }
 
-    @Override
-    public String toString() {
-        return "UserBuilder{" +
-                "userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
 }

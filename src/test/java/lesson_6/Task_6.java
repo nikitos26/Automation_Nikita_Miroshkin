@@ -1,5 +1,6 @@
 package lesson_6;
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -16,6 +17,7 @@ import static driver.SimpleWebDriver.*;
 
 // Сделал два идентичных теста для практики работы с локаторами, из-за этого не стал разбивать метод на подметоды
 
+@Log4j
 public class Task_6 {
     private String url = "https://www.saucedemo.com/";
     private String password = "secret_sauce";
@@ -47,12 +49,12 @@ public class Task_6 {
 
         // Добавление первый товаров в карзину
         String firstGoodNameInCatalog = getDriver().findElement(By.linkText("Sauce Labs Backpack")).getText();
-        System.out.println("firstGoodName " + firstGoodNameInCatalog);
+        log.info("firstGoodName " + firstGoodNameInCatalog);
         getDriver().findElement(By.xpath("//button[@name='add-to-cart-sauce-labs-backpack']")).click();
 
         // Добавление второй товаров в карзину
         String secondGoodNameInCatalog = getDriver().findElement(By.partialLinkText("Bike Light")).getText();
-        System.out.println("secondGoodNameInCatalog " + secondGoodNameInCatalog);
+        log.info("secondGoodNameInCatalog " + secondGoodNameInCatalog);
         getDriver().findElement(By.xpath("//button[contains(@data-test, 'bike-light')]")).click();
         pricesInCatalog = gettingPrices(".inventory_item_price");
 
@@ -88,12 +90,12 @@ public class Task_6 {
 
         // Добавление первый товаров в карзину
         String firstGoodNameInCatalog = getDriver().findElement(By.xpath("//div[contains(text(),'Backpack')]")).getText();
-        System.out.println("firstGoodName " + firstGoodNameInCatalog);
+        log.info("firstGoodName " + firstGoodNameInCatalog);
         getDriver().findElement(By.cssSelector("[name='add-to-cart-sauce-labs-backpack']")).click();
 
         // Добавление второй товаров в карзину
         String secondGoodNameInCatalog = getDriver().findElement(By.partialLinkText("Bike Light")).getText();
-        System.out.println("secondGoodNameInCatalog " + secondGoodNameInCatalog);
+        log.info("secondGoodNameInCatalog " + secondGoodNameInCatalog);
         getDriver().findElement(By.cssSelector("[data-test*='bike-light']")).click();
         pricesInCatalog = gettingPrices(".inventory_item_price");
 

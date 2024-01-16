@@ -2,6 +2,7 @@ package patterns.valueObject.sausedemo;
 
 import base.BasePage;
 import driver.DriverCreation;
+import entities.sausedemo.Password;
 import entities.sausedemo.User;
 import entities.sausedemo.UserBuilder;
 import org.openqa.selenium.By;
@@ -25,12 +26,12 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage open(String url) {
-        DriverCreation.getWebDriver().get(url);
+        DriverCreation.getDriver().get(url);
         return this;
     }
 
     public LoginPage open() {
-        DriverCreation.getWebDriver().get(getProperties().getProperty("url"));
+        DriverCreation.getDriver().get(getProperties().getProperty("url"));
         return this;
     }
 
@@ -75,5 +76,15 @@ public class LoginPage extends BasePage {
 
     public LoginPage login(UserBuilder userBuilder) {
         return enterUsername(userBuilder.getUserName()).enterPassword(userBuilder.getPassword());
+    }
+
+    public LoginPage enterUsername(User user) {
+        sendKeys(this.username, user.getUserName());
+        return this;
+    }
+
+    public LoginPage enterPassword(Password password) {
+        sendKeys(this.password, password.getPassword());
+        return this;
     }
 }

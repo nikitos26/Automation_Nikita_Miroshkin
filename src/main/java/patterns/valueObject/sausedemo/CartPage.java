@@ -1,7 +1,7 @@
-package projects.saucedemo.pages;
+package patterns.valueObject.sausedemo;
 
 import base.BasePage;
-import entities.sausedemo.Product;
+import base.BaseTest;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -12,9 +12,10 @@ public class CartPage extends BasePage {
     private final By removeBtn = By.cssSelector(" .cart_item_label .btn");
     private final By itemName = By.cssSelector(" .inventory_item_name");
 
-    public void verifyPage() {
+    public CartPage verifyPage() {
         Assert.assertEquals(driver.getCurrentUrl(), pageUrl, "Wrong page url.");
         Assert.assertTrue(driver.findElement(checkoutBtn).isDisplayed());
+        return this;
     }
 
     public Integer getAmountItemsInCart() {
@@ -25,22 +26,19 @@ public class CartPage extends BasePage {
         return driver.findElements(cartItem).get(index).findElement(itemName).getText();
     }
 
-    public void removeItemBtnFromCartByIndex(Integer index) {
+    public CartPage removeItemBtnFromCartByIndex(Integer index) {
         click(driver.findElements(cartItem).get(index).findElement(removeBtn));
+        return this;
     }
 
-    public void clickOnCheckoutBtn() {
+    public CartPage clickOnCheckoutBtn() {
         click(this.checkoutBtn);
+        return this;
     }
 
-    public void clickRemoveBntByNameProduct(String productName) {
+    public CartPage clickRemoveBntByNameProduct(String productName) {
         By removeBtn = By.xpath("//div[contains(text(),'" + productName + "')]//ancestor::div[@class='cart_item_label']/descendant::button");
         click(driver.findElement(removeBtn));
+        return this;
     }
-
-    public void clickRemoveBntByNameProduct(Product product) {
-        By removeBtn = By.xpath("//div[contains(text(),'" + product.getProductName() + "')]//ancestor::div[@class='cart_item_label']/descendant::button");
-        click(driver.findElement(removeBtn));
-    }
-
 }

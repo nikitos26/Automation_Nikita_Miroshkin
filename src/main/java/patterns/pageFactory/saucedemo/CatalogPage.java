@@ -35,7 +35,7 @@ public class CatalogPage extends BasePage {
     public void verifyPage() {
         Assert.assertEquals(header.getText(), "Swag Labs", "Wrong header name.");
         Assert.assertFalse(productList.isEmpty(), "Product list is empty.");
-        Assert.assertEquals(DriverCreation.getWebDriver().getCurrentUrl(), "https://www.saucedemo.com/inventory.html",
+        Assert.assertEquals(getDriver().getCurrentUrl(), "https://www.saucedemo.com/inventory.html",
                 "Wrong catalog url.");
     }
 

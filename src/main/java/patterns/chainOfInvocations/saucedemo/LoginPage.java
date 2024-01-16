@@ -26,12 +26,12 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage open(String url) {
-        DriverCreation.getWebDriver().get(url);
+        DriverCreation.getDriver().get(url);
         return this;
     }
 
     public LoginPage open() {
-        DriverCreation.getWebDriver().get(getProperties().getProperty("url"));
+        DriverCreation.getDriver().get(getProperties().getProperty("url"));
         return this;
     }
 
@@ -92,4 +92,3 @@ public class LoginPage extends BasePage {
         return this;
     }
 }
-
