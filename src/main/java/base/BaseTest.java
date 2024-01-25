@@ -1,14 +1,16 @@
 package base;
 
 import driver.DriverCreation;
-import driver.DriverTypes;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import utils.testing.InvokedListener;
 import utils.testing.Listener;
 
+import static driver.DriverCreation.createDriver;
+import static driver.DriverTypes.CHROME;
 import static driver.SimpleWebDriver.getDriver;
+import static driver.DriverTypes.valueOf;
 import static utils.properties.PropertyReader.getProperties;
 
 
@@ -17,9 +19,10 @@ public abstract class BaseTest {
 
     @BeforeTest
     protected void setUp() {
-        DriverCreation.createDriver(System.getProperties().containsKey("config")
-                ? DriverTypes.valueOf(getProperties().getProperty("browser").toUpperCase())
-                : DriverTypes.CHROME);
+        createDriver(System.getProperties().containsKey("config")
+                ? valueOf(getProperties().getProperty("browser").toUpperCase())
+                : CHROME
+        );
     }
 
     @AfterTest(alwaysRun = true)
