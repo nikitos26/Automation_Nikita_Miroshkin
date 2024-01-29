@@ -25,7 +25,7 @@ pipeline {
                     always{
                         sh 'chown -R 1003:1003 ./target/allure-results'
                         archiveArtifacts artifacts: 'target/allure-results/*', allowEmptyArchive: true
-                        archiveArtifacts artifacts: 'target/logs/**, allowEmptyArchive: true
+                        archiveArtifacts artifacts: 'target/logs/*', allowEmptyArchive: true
                     }
             }
         }
