@@ -1,5 +1,6 @@
 package utils.provider;
 
+import entities.rw.Directions;
 import entities.sausedemo.Product;
 import entities.sausedemo.UserBuilder;
 import org.testng.annotations.DataProvider;
@@ -71,6 +72,15 @@ public class DataProviderClass {
                         .withUserName("problem_user")
                         .withPassword("sauce")
                         .build()}
+        };
+    }
+
+    @DataProvider(name = "Directions for travel.")
+    public Object[][] getTravelDirections() {
+        return new Object[][]{
+                {new Directions.DirectionsBuilder().from("Минск").to("Витебск").build()},
+                {new Directions.DirectionsBuilder().from("Витебск").to("Молодечно").build()},
+                {new Directions.DirectionsBuilder().from("Брест").to("Гомель").build()}
         };
     }
 }
