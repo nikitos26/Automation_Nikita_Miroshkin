@@ -1,5 +1,6 @@
 package utils.provider;
 
+import entities.rw.Railway;
 import entities.sausedemo.Product;
 import entities.sausedemo.UserBuilder;
 import org.testng.annotations.DataProvider;
@@ -71,6 +72,24 @@ public class DataProviderClass {
                         .withUserName("problem_user")
                         .withPassword("sauce")
                         .build()}
+        };
+    }
+
+    @DataProvider(name = "Directions for travel.")
+    public Object[][] getRailwayDirections() {
+        return new Object[][]{
+                {new Railway.RailwayBuilder().from("Минск").to("Витебск").build()},
+                {new Railway.RailwayBuilder().from("Витебск").to("Молодечно").build()},
+                {new Railway.RailwayBuilder().from("Брест").to("Гомель").build()}
+        };
+    }
+
+    @DataProvider(name = "Railway stations.")
+    public Object[][] getRailwayStations() {
+        return new Object[][]{
+                {new Railway.RailwayBuilder().station("Минск-Пассажирский").build()},
+                {new Railway.RailwayBuilder().station("Орша-Центральная").build()},
+                {new Railway.RailwayBuilder().station("Смолевичи").build()}
         };
     }
 }
