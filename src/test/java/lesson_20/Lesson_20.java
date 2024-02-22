@@ -114,13 +114,13 @@ public class Lesson_20 {
         Assert.assertEquals(actualId, 4);
         Assert.assertNotEquals(response.jsonPath().getString("token"), null);
     }
-
+    
     @Test(priority = 9)
     public void successfulLogin() {
-        Response response = given().basePath("/login").contentType("application/json").body("{\n" +
-                "    \"email\": \"eve.holt@reqres.in\",\n" +
-                "    \"password\": \"cityslicka\"\n" +
-                "}").post();
+        CreateUser userToLogin = new CreateUser();
+        userToLogin.setEmail("eve.holt@reqres.in");
+        userToLogin.setPassword("cityslicka");
+        Response response = given().basePath("/login").contentType("application/json").body(userToLogin).post();
 
         response.then().statusCode(200);
         Assert.assertNotEquals(response.jsonPath().getString("token"), null);
